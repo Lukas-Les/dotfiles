@@ -1,0 +1,4 @@
+alias cdgithub="cd /Users/$USER/Documents/Github"
+alias gfp="git fetch; git pull"
+alias s="source ~/.zshrc"
+alias spyv="source .venv/bin/activate"
