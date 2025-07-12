@@ -23,8 +23,15 @@ To use these aliases:
 
 This file contains my personal tmux configuration, designed to enhance productivity with custom keybindings, status line, and plugin management.
 
+### Prerequisites
+*   tmux plugin manager
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 To use this configuration:
 1.  Ensure `tmux` is installed.
+2.  Ensure tmux plugin manager installed
 2.  Navigate to your `dotfiles` directory.
 3.  Create a symbolic link from `tmux.conf` to `~/.tmux.conf`:
     ```bash
