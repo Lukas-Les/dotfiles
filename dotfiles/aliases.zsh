@@ -1,7 +1,5 @@
-[ -f ~/.zshrc_local ] && source ~/.zsh_rc_local
-
 alias cdgithub="cd /Users/$USER/Documents/Github"
-alias gfp="git fetch; git pull"
 alias s="source ~/.zshrc"
 alias spyv="source .venv/bin/activate"
 alias v="nvim"
+alias t="tmux"
