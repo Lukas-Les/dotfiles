@@ -34,7 +34,64 @@ To use this configuration:
 2.  Ensure tmux plugin manager installed
 2.  Navigate to your `dotfiles` directory.
 3.  Create a symbolic link from `tmux.conf` to `~/.tmux.conf`:
-    ```bash
-    ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
-    ```
+```bash
+ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 ```
+
+### `env-launcher`
+
+The `env-launcher.sh` script automates the process of creating or attaching to a `tmux` session for a specific project. It can also activate a Python virtual environment using `poetry` or `uv` upon session creation.
+
+**Usage:**
+
+```bash
+env-launcher.sh <project_name> [tool]
+```
+
+*   `<project_name>`: The name of the project, which should correspond to a directory under your `GITHUB_DIR` (e.g., if `GITHUB_DIR` is `~/github` and `project_name` is `my-app`, the script looks for `~/github/my-app`). This will also be the name of the `tmux` session.
+*   `[tool]`: (Optional) Specifies the tool to activate the virtual environment.
+    *   `poetry`: Activates the virtual environment managed by Poetry.
+    *   `uv`: Activates a `.venv` directory (e.g., created by `uv`).
+
+**Installation:**
+
+For better organization, it's recommended to place executable scripts in a directory included in your `PATH`, such as `~/.local/bin`.
+
+1.  Navigate to your `dotfiles` directory.
+2.  Create a symbolic link from `env-launcher/env-launcher.sh` to `~/.local/bin/env-launcher.sh`:
+    ```bash
+    ln -s "$(pwd)/env-launcher/env-launcher.sh" ~/.local/bin/env-launcher
+    ```
+3.  Make the script executable:
+    ```bash
+    chmod +x ~/.local/bin/env-launcher
+    ```
+
+**Examples:**
+
+*   Launch a project named `my-project` without activating a virtual environment:
+    ```bash
+    env-launcher my-project
+    ```
+*   Launch `my-project` and activate its Poetry virtual environment:
+    ```bash
+    env-launcher.sh my-project poetry
+    ```
+*   Launch `my-project` and activate its `uv` virtual environment:
+    ```bash
+    env-launcher.sh my-project uv
+    ```
+
+**Aliases (Optional):**
+
+You can create shell aliases for convenience in your `aliases.zsh` or similar configuration:
+
+```bash
+alias el="env-launcher.sh"
+alias elp="env-launcher.sh poetry"
+alias elu="env-launcher.sh uv"
+
+# Example specific project alias
+alias elmyprojectp="env-launcher.sh my-project poetry"
+```
+
