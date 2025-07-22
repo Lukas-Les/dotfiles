@@ -7,3 +7,7 @@ alias tns="tmux new -s"
 pea() {
   $(poetry env activate)
 }
+alias cdfintra="env-launcher fintra uv"
+alias cdes="env-launcher external-service-v2 poetry"
+alias cdds="env-launcher data-source poetry"
+alias cddc="env-launcer data_common poetry"
