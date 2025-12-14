@@ -1,4 +1,19 @@
-alias cdgithub="cd /Users/$USER/Documents/Github"
+case "$OSTYPE" in
+  darwin*)
+    GH_ROOT="/Users/$USER/Documents/Github"
+    ;;
+  linux*)
+    GH_ROOT="/home/$USER/Documents/Github"
+    ;;
+  *)
+    GH_ROOT="/home/$USER/Documents/Github"
+    ;;
+esac
+
+alias cdgithub="cd $GH_ROOT"
+
+# Define the alias using the determined root path
+alias cdgithub="cd $GH_ROOT"
 alias s="source ~/.zshrc"
 alias spyv="source .venv/bin/activate"
 alias v="nvim"
