@@ -37,6 +37,8 @@ To use this configuration:
 ```bash
 ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 ```
+4. Start tmux, press ctrl+b and then I to install plugins
+5. Restart tmux
 
 ### `env-launcher`
 
@@ -66,6 +68,7 @@ For better organization, it's recommended to place executable scripts in a direc
     ```bash
     chmod +x ~/.local/bin/env-launcher
     ```
+4. Make sure env var $GITHUB_DIR points to a dir where all your projects sits.
 
 **Examples:**
 

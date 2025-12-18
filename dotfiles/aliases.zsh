@@ -12,8 +12,6 @@ esac
 
 alias cdgithub="cd $GH_ROOT"
 
-# Define the alias using the determined root path
-alias cdgithub="cd $GH_ROOT"
 alias s="source ~/.zshrc"
 alias spyv="source .venv/bin/activate"
 alias v="nvim"
